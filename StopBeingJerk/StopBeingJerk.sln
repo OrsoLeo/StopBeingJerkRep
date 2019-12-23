@@ -5,13 +5,11 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.Web", "StopBeingJerk.Web\StopBeingJerk.Web.csproj", "{AAD8DA62-3D9B-4C6B-A245-FF53BC9734E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.Context", "StopBeingJerk.Context\StopBeingJerk.Context.csproj", "{591346CE-95D6-4508-AEED-EFE6BAB82D99}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.Domain", "StopBeingJerk.Domain\StopBeingJerk.Domain.csproj", "{1FA28716-1AE0-4975-8BE2-5D1ABDD4F581}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.DataAccess", "StopBeingJerk.DataAccess\StopBeingJerk.DataAccess.csproj", "{F74151FA-67F8-457A-9C38-9AD7F7DBECAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "Console\Console.csproj", "{1A69DDE3-5584-45FB-80BE-6C7A3D60449C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console", "Console\Console.csproj", "{1A69DDE3-5584-45FB-80BE-6C7A3D60449C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{AAD8DA62-3D9B-4C6B-A245-FF53BC9734E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD8DA62-3D9B-4C6B-A245-FF53BC9734E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD8DA62-3D9B-4C6B-A245-FF53BC9734E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{591346CE-95D6-4508-AEED-EFE6BAB82D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{591346CE-95D6-4508-AEED-EFE6BAB82D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{591346CE-95D6-4508-AEED-EFE6BAB82D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{591346CE-95D6-4508-AEED-EFE6BAB82D99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1FA28716-1AE0-4975-8BE2-5D1ABDD4F581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1FA28716-1AE0-4975-8BE2-5D1ABDD4F581}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FA28716-1AE0-4975-8BE2-5D1ABDD4F581}.Release|Any CPU.ActiveCfg = Release|Any CPU
