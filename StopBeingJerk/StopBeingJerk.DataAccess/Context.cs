@@ -20,7 +20,6 @@ namespace StopBeingJerk.DataAccess
         public virtual DbSet<CarInfoCard> CarInfoCards { get; set; }
         public virtual DbSet<CarModel> CarModels { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
-        public virtual DbSet<CommentInfoCard> CommentInfoCards { get; set; }
         public virtual DbSet<CommentTopicType> CommentTopicTypes { get; set; }
         public virtual DbSet<CommentTopic> CommentTopics { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
@@ -30,14 +29,8 @@ namespace StopBeingJerk.DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //            if (!optionsBuilder.IsConfigured)
-            //            {
-            //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-            //                optionsBuilder.UseSqlServer("data source=localhost;initial catalog=StopBeingJerkDb;integrated security=True;MultipleActiveResultSets=True;");
-            //            }
             if (!optionsBuilder.IsConfigured)
             {
-                //optionsBuilder.UseSqlServer("StopBeingJerkDb");
                 optionsBuilder.UseSqlServer("data source=localhost;initial catalog=StopBeingJerkDb;integrated security=True;MultipleActiveResultSets=True;");
             }
         }
@@ -112,27 +105,6 @@ namespace StopBeingJerk.DataAccess
                     .HasMaxLength(25);
             });
 
-            modelBuilder.Entity<CommentInfoCard>(entity =>
-            {
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.CarInfoCardId).HasColumnName("CarInfoCardID");
-
-                entity.Property(e => e.CommentTopicId).HasColumnName("CommentTopicID");
-
-                entity.HasOne(d => d.CarInfoCard)
-                    .WithMany(p => p.CommentInfoCards)
-                    .HasForeignKey(d => d.CarInfoCardId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CommentInfoCards_To_CarInfoCards");
-
-                entity.HasOne(d => d.CommentTopic)
-                    .WithMany(p => p.CommentInfoCards)
-                    .HasForeignKey(d => d.CommentTopicId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CommentInfoCards_To_CommentTopics");
-            });
-
             modelBuilder.Entity<CommentTopicType>(entity =>
             {
                 entity.HasIndex(e => e.TypeName)
@@ -176,28 +148,35 @@ namespace StopBeingJerk.DataAccess
 
                 entity.Property(e => e.CommentDescription).IsRequired();
 
-                entity.Property(e => e.CommentInfoCardId).HasColumnName("CommentInfoCardID");
+                entity.Property(e => e.CommentTopicId).HasColumnName("CommentTopicID");
 
-                entity.HasOne(d => d.CommentInfoCard)
+                entity.Property(e => e.RegistrationNumberId).HasColumnName("RegistrationNumberID");
+
+                entity.HasOne(d => d.CommentTopic)
                     .WithMany(p => p.Comments)
-                    .HasForeignKey(d => d.CommentInfoCardId)
+                    .HasForeignKey(d => d.CommentTopicId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Comments_To_CommentInfoCards");
+                    .HasConstraintName("FK_Comments_To_CommentTopics");
+
+                entity.HasOne(d => d.RegistrationNumber)
+                    .WithMany(p => p.Comments)
+                    .HasForeignKey(d => d.RegistrationNumberId)
+                    .HasConstraintName("FK_Commens_To_RegistrationNumbers");
             });
 
             modelBuilder.Entity<PhotoInfoCard>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.CommentInfoCardId).HasColumnName("CommentInfoCardID");
+                entity.Property(e => e.CommentId).HasColumnName("CommentID");
 
                 entity.Property(e => e.PhotoId).HasColumnName("PhotoID");
 
-                entity.HasOne(d => d.CommentInfoCard)
+                entity.HasOne(d => d.Comment)
                     .WithMany(p => p.PhotoInfoCards)
-                    .HasForeignKey(d => d.CommentInfoCardId)
+                    .HasForeignKey(d => d.CommentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_PhotoInfoCards_To_CommentInfoCards");
+                    .HasConstraintName("FK_PhotoInfoCards_To_Comments");
 
                 entity.HasOne(d => d.Photo)
                     .WithMany(p => p.PhotoInfoCards)

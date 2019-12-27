@@ -7,7 +7,7 @@ namespace StopBeingJerk.Domain.Entities
     {
         public CommentTopic()
         {
-            CommentInfoCards = new HashSet<CommentInfoCard>();
+            Comments = new HashSet<Comment>();
         }
 
         public int Id { get; set; }
@@ -15,6 +15,6 @@ namespace StopBeingJerk.Domain.Entities
         public int? TopicTypeId { get; set; }
 
         public virtual CommentTopicType TopicType { get; set; }
-        public virtual ICollection<CommentInfoCard> CommentInfoCards { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }
