@@ -13,9 +13,9 @@ namespace StopBeingJerk.DataAccess
         // TODO: add transaction scope
         private readonly Context _context;
         private bool _isDisposed = false;
-        public Repository()
+        public Repository(Context context)
         {
-            _context = new Context();
+            _context = context;
         }
 
         public async Task<EntityType> GetByIdAsync<IdType>(IdType id)

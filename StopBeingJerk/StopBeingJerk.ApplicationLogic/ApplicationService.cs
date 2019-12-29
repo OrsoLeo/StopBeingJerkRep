@@ -9,7 +9,7 @@ namespace StopBeingJerk.ApplicationLogic
     {
         private bool _disposed = false;
         private readonly SafeHandle _handle = new SafeFileHandle(IntPtr.Zero, true);
-        private readonly Context _context;
+        protected readonly Context _context;
 
         public ApplicationService()
         {
