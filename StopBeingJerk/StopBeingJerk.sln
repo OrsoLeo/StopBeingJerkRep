@@ -9,15 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.Domain", "Sto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.DataAccess", "StopBeingJerk.DataAccess\StopBeingJerk.DataAccess.csproj", "{F74151FA-67F8-457A-9C38-9AD7F7DBECAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console", "Console\Console.csproj", "{1A69DDE3-5584-45FB-80BE-6C7A3D60449C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.ApplicationLogic", "StopBeingJerk.ApplicationLogic\StopBeingJerk.ApplicationLogic.csproj", "{774825B4-7939-4936-8046-C3AD41BA94CC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.DI", "StopBeingJerk.DI\StopBeingJerk.DI.csproj", "{48F0585E-C629-4FD1-9B4E-0BE258604AC2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.Dto", "StopBeingJerk.Dto\StopBeingJerk.Dto.csproj", "{30D8A1EF-69E4-403B-952C-12EABDBDB3B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopBeingJerk.Mapper", "StopBeingJerk.Mapper\StopBeingJerk.Mapper.csproj", "{1FE42E5D-F263-42BD-BB3E-4AA16A2E5C65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StopBeingJerk.Mapper", "StopBeingJerk.Mapper\StopBeingJerk.Mapper.csproj", "{1FE42E5D-F263-42BD-BB3E-4AA16A2E5C65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandBox", "SandBox\SandBox.csproj", "{DA5DF056-0704-4ABC-ADFA-7012AB910490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,6 @@ Global
 		{F74151FA-67F8-457A-9C38-9AD7F7DBECAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F74151FA-67F8-457A-9C38-9AD7F7DBECAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F74151FA-67F8-457A-9C38-9AD7F7DBECAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A69DDE3-5584-45FB-80BE-6C7A3D60449C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A69DDE3-5584-45FB-80BE-6C7A3D60449C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A69DDE3-5584-45FB-80BE-6C7A3D60449C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A69DDE3-5584-45FB-80BE-6C7A3D60449C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{774825B4-7939-4936-8046-C3AD41BA94CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{774825B4-7939-4936-8046-C3AD41BA94CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{774825B4-7939-4936-8046-C3AD41BA94CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{1FE42E5D-F263-42BD-BB3E-4AA16A2E5C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FE42E5D-F263-42BD-BB3E-4AA16A2E5C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FE42E5D-F263-42BD-BB3E-4AA16A2E5C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5DF056-0704-4ABC-ADFA-7012AB910490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5DF056-0704-4ABC-ADFA-7012AB910490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5DF056-0704-4ABC-ADFA-7012AB910490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5DF056-0704-4ABC-ADFA-7012AB910490}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

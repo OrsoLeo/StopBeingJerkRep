@@ -1,11 +1,10 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using StopBeingJerk.Domain;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+
 namespace StopBeingJerk.DataAccess
 {
     public class Repository<EntityType> : IRepository<EntityType> where EntityType : class
@@ -13,6 +12,8 @@ namespace StopBeingJerk.DataAccess
         // TODO: add transaction scope
         private readonly Context _context;
         private bool _isDisposed = false;
+        public DbSet<EntityType> Set => _context.Set<EntityType>();
+
         public Repository(Context context)
         {
             _context = context;

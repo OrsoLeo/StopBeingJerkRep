@@ -12,9 +12,8 @@ namespace StopBeingJerk.Domain.Entities
 
         public int Id { get; set; }
         public string TopicName { get; set; }
-        public int? TopicTypeId { get; set; }
+        public string TopicType { get; set; }
 
-        public virtual CommentTopicType TopicType { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
     }
 }

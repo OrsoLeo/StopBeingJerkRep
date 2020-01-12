@@ -1,6 +1,9 @@
-﻿using StopBeingJerk.DataAccess;
+﻿using StopBeingJerk.ApplicationLogic.CarManagement;
+using StopBeingJerk.DataAccess;
 using StopBeingJerk.DataAccess.Comments;
 using StopBeingJerk.Domain.Entities;
+using StopBeingJerk.Mapper;
+using StopBeingJerk.Web.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +22,10 @@ namespace Console
                 //    System.Console.WriteLine($"{item.Id} - {item.Number}");
                 //}
 
-               
-                
+                CarController carController = new CarController(new CarService(new DtoMapper().mapper));
+                var item = carController.GetCarInfo("СВ7743АЕ");
+
+                System.Console.WriteLine(item.Result);
             }
 
         }

@@ -17,10 +17,10 @@ namespace StopBeingJerk.Web.Controllers
             _commentService = commentService;
         }
 
-        [HttpPost("getAllCommentsByNumber")]
-        public async Task<IActionResult> GetAllCommentsByNumber([FromBody] GetAllCommentsByNumberInput input)
-        {
-            return Ok(await _commentService.GetAllCommentsByNumber(input.Number));
-        }
+        //[HttpPost("getAllCommentsByNumber")]
+        //public async Task<IActionResult> GetAllCommentsByNumber([FromBody] GetAllCommentsByNumberInput input)
+        //{
+        //    return Ok(await _commentService.GetAllCommentsByNumber(input.Number));
+        //}
     }
 }

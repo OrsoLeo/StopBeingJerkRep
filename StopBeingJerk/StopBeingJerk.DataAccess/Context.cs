@@ -20,7 +20,6 @@ namespace StopBeingJerk.DataAccess
         public virtual DbSet<CarInfoCard> CarInfoCards { get; set; }
         public virtual DbSet<CarModel> CarModels { get; set; }
         public virtual DbSet<Color> Colors { get; set; }
-        public virtual DbSet<CommentTopicType> CommentTopicTypes { get; set; }
         public virtual DbSet<CommentTopic> CommentTopics { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<PhotoInfoCard> PhotoInfoCards { get; set; }
@@ -31,7 +30,7 @@ namespace StopBeingJerk.DataAccess
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("data source=localhost;initial catalog=StopBeingJerkDb;integrated security=True;MultipleActiveResultSets=True;");
+                optionsBuilder.UseSqlServer("data source=ORSO\\LOCALHOST;initial catalog=StopBeingJerkDb;integrated security=True;MultipleActiveResultSets=True;");
             }
         }
 
@@ -104,20 +103,7 @@ namespace StopBeingJerk.DataAccess
                     .IsRequired()
                     .HasMaxLength(25);
             });
-
-            modelBuilder.Entity<CommentTopicType>(entity =>
-            {
-                entity.HasIndex(e => e.TypeName)
-                    .HasName("UQ_TopicType_Name")
-                    .IsUnique();
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.TypeName)
-                    .IsRequired()
-                    .HasMaxLength(15);
-            });
-
+            
             modelBuilder.Entity<CommentTopic>(entity =>
             {
                 entity.HasIndex(e => e.TopicName)
@@ -130,12 +116,9 @@ namespace StopBeingJerk.DataAccess
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.TopicTypeId).HasColumnName("TopicTypeID");
-
-                entity.HasOne(d => d.TopicType)
-                    .WithMany(p => p.CommentTopics)
-                    .HasForeignKey(d => d.TopicTypeId)
-                    .HasConstraintName("FK_CommentTopics_To_CommentTopicTypes");
+                entity.Property(e => e.TopicType)
+                    .IsRequired()
+                    .HasMaxLength(15);
             });
 
             modelBuilder.Entity<Comment>(entity =>

@@ -12,9 +12,7 @@ namespace StopBeingJerk.Mapper
 
             CreateMap<PhotoInfoCard, PhotoInfoCardDto>().ReverseMap();
 
-            CreateMap<CommentTopicType, CommentTopicTypeDto>().ReverseMap();
-
-            CreateMap<CommentTopic, CommentTopicTypeDto>().ReverseMap();
+            CreateMap<CommentTopic, CommentTopicDto>().ReverseMap();
 
             CreateMap<Comment, CommentDto>().ReverseMap();
         }

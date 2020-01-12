@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using StopBeingJerk.Domain.Entities;
+using StopBeingJerk.Dto.CarManagement;
 using StopBeingJerk.Dto.Comments;
 
 namespace StopBeingJerk.Mapper
@@ -15,6 +16,8 @@ namespace StopBeingJerk.Mapper
             CreateMap<CarInfoCard, CarInfoCardDto>().ReverseMap();
 
             CreateMap<RegistrationNumber, RegistrationNumberDto>().ReverseMap();
+
+            CreateMap<RegistrationNumber, CarInfoOutput>().ReverseMap();
 
             CreateMap<Color, ColorDto>().ReverseMap();
         }

@@ -24,10 +24,13 @@ namespace StopBeingJerk.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHealthChecks();
+            services.AddControllers();
             services.AddMvc(options =>
             {
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
+
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
@@ -49,21 +52,28 @@ namespace StopBeingJerk.Web
         // This method gets called by the ruæntime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.RoutePrefix = "swagger/ui";
+                c.RoutePrefix = "swagger";
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI(v1)");
             });
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // global cors policy
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
+            //app.UseAuthentication();
+            //app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
