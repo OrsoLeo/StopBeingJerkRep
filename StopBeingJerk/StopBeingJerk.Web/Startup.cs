@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using StopBeingJerk.DI.ApplicationLogic;
+using StopBeingJerk.DI.Dependencies;
 using StopBeingJerk.Mapper;
 
 namespace StopBeingJerk.Web
@@ -47,6 +47,7 @@ namespace StopBeingJerk.Web
 
             CommentsDependencies.RegisterDependencies(services);
             CarDependencies.RegisterDependencies(services);
+            TopicsDependencies.RegisterDependencies(services);
         }
 
         // This method gets called by the ruæntime. Use this method to configure the HTTP request pipeline.

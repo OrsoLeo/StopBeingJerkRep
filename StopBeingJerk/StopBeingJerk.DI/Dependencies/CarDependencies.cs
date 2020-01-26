@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using StopBeingJerk.ApplicationLogic.CarManagement;
 
-namespace StopBeingJerk.DI.ApplicationLogic
+namespace StopBeingJerk.DI.Dependencies
 {
     public class CarDependencies
     {

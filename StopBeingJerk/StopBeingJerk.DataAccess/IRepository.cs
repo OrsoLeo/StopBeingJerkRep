@@ -10,7 +10,7 @@ namespace StopBeingJerk.DataAccess
     public interface IRepository<EntityType> : IDisposable where EntityType : class
     {
         DbSet<EntityType> Set { get; }
-        EntityType AddOrUpdate(EntityType entity);
+        Task<EntityType> AddOrUpdate(EntityType entity);
         Task DeleteById<IdType>(IdType id);
         IQueryable<EntityType> Filter(Expression<Func<EntityType, bool>> predicate);
         IQueryable<EntityType> FilterWhen(Expression<Func<EntityType, bool>> predicate, Func<Context, bool> expressionToCheck);

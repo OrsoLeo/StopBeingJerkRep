@@ -1,8 +1,7 @@
-﻿
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using StopBeingJerk.ApplicationLogic.Comments;
 
-namespace StopBeingJerk.DI.ApplicationLogic
+namespace StopBeingJerk.DI.Dependencies
 {
     public class CommentsDependencies
     {

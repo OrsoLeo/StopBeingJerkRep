@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StopBeingJerk.DataAccess\StopBeingJerk.DataAccess.csproj" />
     <ProjectReference Include="..\StopBeingJerk.Dto\StopBeingJerk.Dto.csproj" />
+    <ProjectReference Include="..\StopBeingJerk.Shared\StopBeingJerk.Shared.csproj" />
   </ItemGroup>
 
 </Project>

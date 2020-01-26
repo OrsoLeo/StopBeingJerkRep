@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StopBeingJerk.ApplicationLogic\StopBeingJerk.ApplicationLogic.csproj" />
     <ProjectReference Include="..\StopBeingJerk.DataAccess\StopBeingJerk.DataAccess.csproj" />
   </ItemGroup>
 

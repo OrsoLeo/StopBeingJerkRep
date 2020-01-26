@@ -1,5 +1,4 @@
-﻿
-namespace StopBeingJerk.Dto.Comments
+﻿namespace StopBeingJerk.Dto.Comments
 {
     public class CarInfoCardDto
     {

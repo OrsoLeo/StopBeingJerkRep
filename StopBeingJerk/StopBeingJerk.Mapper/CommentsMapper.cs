@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using StopBeingJerk.Domain.Entities;
 using StopBeingJerk.Dto.Comments;
+using StopBeingJerk.Dto.Common;
 
 namespace StopBeingJerk.Mapper
 {
@@ -15,6 +16,10 @@ namespace StopBeingJerk.Mapper
             CreateMap<CommentTopic, CommentTopicDto>().ReverseMap();
 
             CreateMap<Comment, CommentDto>().ReverseMap();
+
+            CreateMap<CommentTopic, AutoCompleteDto>()
+                .ForMember(d => d.Name, opt => opt.MapFrom(s => s.TopicName))
+                .ForMember(d => d.Value, opt => opt.MapFrom(s => s.Id));
         }
     }
 }

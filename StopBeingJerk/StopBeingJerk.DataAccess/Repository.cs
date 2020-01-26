@@ -47,11 +47,17 @@ namespace StopBeingJerk.DataAccess
             var entityToDelete = await GetByIdAsync(id);
 
             _context.Set<EntityType>().Remove(entityToDelete);
+
+            await _context.SaveChangesAsync();
         }
 
-        public EntityType AddOrUpdate(EntityType entity)
+        public async Task<EntityType> AddOrUpdate(EntityType entity)
         {
-            return _context.Set<EntityType>().Update(entity).Entity;
+            var result = _context.Set<EntityType>().Update(entity).Entity;
+
+            await _context.SaveChangesAsync();
+
+            return result;
         }
 
         public void Dispose()
